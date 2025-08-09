@@ -2,6 +2,7 @@
 
 namespace LaravelReady\LicenseServer\Services;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Config;
 
@@ -142,7 +143,7 @@ class LicenseService
      *
      * @return null | License
      */
-    public static function getLicenseByUserId(int $userId, string $licenseKey = null): null | License
+    public static function getLicenseByUserId(int $userId, string $licenseKey = null): null | Builder | License
     {
         if ($licenseKey && !Str::isUuid($licenseKey)) {
             return null;
