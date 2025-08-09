@@ -154,7 +154,7 @@ class LicenseService
             $licenseQuery->where('license_key', $licenseKey);
         }
 
-        return $licenseQuery->orderBy('id')->first();
+        return $licenseQuery->orderBy('id');
     }
 
     /**
